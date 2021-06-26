@@ -1,6 +1,7 @@
 
 
 # 연산
+print("######연산######")
 a = 7
 b = 3
 
@@ -10,6 +11,7 @@ print(a % b)
 print(a // b)
 
 # list 초기화
+print("######리스트######")
 a = list()
 print(a)
 
@@ -81,3 +83,45 @@ del_data = {1, 5}
 
 result = [i for i in a if i not in del_data]
 print(result)
+
+
+# Tuple(대입 연산자를 사용할 수 없음)
+print("######튜플######")
+a = (1, 2, 3, 4)
+
+# 사전 자료형 key, value 순
+print("######사전######")
+data = dict()
+data['사과'] = 'Apple'
+data['바나나'] = 'Banana'
+data['코코넛'] = 'Coconut'
+print(data)
+
+key_list = data.keys()
+value_list = data.values()
+
+print(key_list)
+print(value_list)
+
+for key in key_list:
+    print(data[key])
+
+# 집합합
+print("######집합######")
+a = set([1, 2, 3, 4])
+b = set([2, 3, 4, 5])
+
+# 차례 대로 합집합 교집합 차집합
+print(a | b)
+print(a & b)
+print(a - b)
+
+# 집합 함수
+a = set([1, 2, 3])
+a.add(4)
+print(a)
+# 여러개 추가
+a.update([5, 6])
+print(a)
+a.remove(3)
+print(a)
