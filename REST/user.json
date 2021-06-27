@@ -1,0 +1,20 @@
+[
+    {
+        "id": "gildong",
+        "password": "1!2@3#4$",
+        "age": 30,
+        "hobby": [
+            "football",
+            "programming"
+        ]
+    },
+    {
+        "id": "yeongkwon",
+        "password": "1234",
+        "age": 26,
+        "hobby": [
+            "baseball",
+            "programming"
+        ]
+    }
+]
