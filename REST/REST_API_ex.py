@@ -11,6 +11,9 @@ if __name__ == '__main__':
 
     # 모든 사용자(user) 정보를 확인하며 이름 정보만 삽입
     name_list = []
+    address_list = []
     for user in data:
         name_list.append(user['name'])
+        address_list.append(user['address'])
     print(name_list)
+    print(address_list)
