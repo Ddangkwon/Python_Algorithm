@@ -4,9 +4,18 @@ from random import *
 import sys
 import pandas as pd
 import numpy as np
+import tkinter
+from tkinter import filedialog
+
+
 
 CH_IDX = 16
 DATA_IDX = 30
+root_window = tkinter.Tk()
+root_window.withdraw()
+
+
+
 def script_formatting():
     sys.stdout = open('data.txt', 'w')
 
@@ -18,7 +27,12 @@ def script_formatting():
 
 
 def parse_data():
-    f = open("data.txt")
+    list_file = []  # 파일 목록 담을 리스트 생성
+    f = filedialog.askopenfile(initialdir="/", \
+                               title = "select file : ", \
+                               filetypes=(("*.txt", "*txt"), ("*.xlsx", "*xlsx"), ("*.csv", "*csv")))
+    if f is None:
+        sys.exit()
 
     data = f.readlines()
     line_cnt = len(data)
@@ -56,7 +70,7 @@ def save_data(t_lst):
     arr = np.squeeze(arr_lst, axis=2)
     print(arr.shape)
     dataframe = pd.DataFrame(arr)
-    dataframe.to_csv("output.csv")
+    dataframe.to_csv("output.csv", mode = 'a')
 
 
 if __name__ == '__main__':
